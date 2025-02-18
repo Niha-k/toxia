@@ -1,0 +1,57 @@
+version control 
+
+ESALIY RECOVER FILE
+
+COMMIT MEANS CHANGE ROLL BACK
+
+ROLLBACK TO PRECIOUSLY WORKING STATE 
+
+WHO INTRODUCED AN ISSUE AND WHEN 
+
+HISTORY 
+
+LOCAL DB TO KEEP TRACK OF FILE DRAW BACK CHANGES ONLY IN COMPUTER
+
+DANGER LOSS OF FILES
+=======================================================
+				GIT COMMAND	
+=======================================================
+				GIT
+BIT BASH TERMINAL LINUX
+
+GIT COMMAND LINE TOOL
+
+=======================================================
+				PRESENT WORKING DIRECTORY => pwd
+=======================================================
+=======================================================
+				GUI HAS LESS FEATURES
+=======================================================
+=======================================================
+				GRAPHICAL USER INTERFACE
+=======================================================
+		git config --global user.name "niha"
+		git config --global user.email "niha@aptechgdn.net"
+		git status
+		git init
+		git status
+		
+		git add --a
+		git commit -m "commit message"	
+		git log
+		git add firstfilename.txt
+		git init
+		ls -lart	
+		i 
+		initial commit
+		escape :wq
+		git add -A
+		git checkout filename
+		git checkout -f
+		git log
+		
+
+
+
+
+

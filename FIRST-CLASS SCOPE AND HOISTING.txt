@@ -1,0 +1,182 @@
+Scope
+Scope is about the visibility of variables and functions in different part of your code.
+
+In JavaScript, we have have three types of scope - global, function, and block.
+
+Global Scope
+Anything declared at the top level of a file or module is part of the global scope for that file or module.
+
+const newsletter = 'The T-Shaped Dev';
+
+function logGlobalNewsletter() {
+  console.log(newsletter);
+}
+
+logGlobalNewsletter(); // 'The T-Shaped Dev'
+console.log(newsletter); // 'The T-Shaped Dev'
+Function Scope
+Anything declared inside a function like variables and functions is restricted only to the function.
+
+So if you have defined some variables and functions inside a function, you can’t access them outside this function.
+
+function logNewsletter() {
+  const newsletter = 'The T-Shaped Dev';
+  console.log(newsletter);
+}
+
+logNewsletter(); // 'The T-Shaped Dev'
+console.log(newsletter); // ReferenceError: newsletter is not defined
+Block Scope
+Like Function scope, but for blocks defined by “if” and “for” statements, const, let.
+
+if (true) {
+  const newsletter = 'The T-Shaped Dev';
+}
+
+console.log(newsletter); // ReferenceError: newsletter is not defined
+for (let i = 0; i < 5; i++) {
+  console.log(i); // 0,1,2,3,4
+}
+
+console.log(i); // // ReferenceError: i is not defined
+Nesting Scopes
+You can nest scopes in each other.
+
+
+Source: You Don’t Know JS book.
+Bubble 1 includes the global scope and has just one identifier in it - foo.
+
+Bubble 2 includes the scope of function foo, which includes the three identifiers - a, bar, and b.
+
+Bubble 3 includes the scope of function bar, which includes only one identifier - c.
+
+In Bubble 3, the compiler will look up for a and b in the upper scopes until it find the first match.
+
+Scope Shadowing
+Variables can be shadowed between scopes.
+
+This means that you can redefine a variable with the same name within a new scope and this won’t cause any errors.
+
+It will cause an error only if you use const.
+
+const newsletter = '[GLOBAL] The T-Shaped Dev';
+
+function logNewsletter() {
+  const newsletter = '[SHADOWED] The T-Shaped Dev';
+  console.log(newsletter);
+}
+
+logNewsletter(); // '[SHADOWED] The T-Shaped Dev'
+console.log(newsletter); '[GLOBAL] The T-Shaped Dev'
+Scope Software Design
+In terms of software design, shadowing can be very confusing and not very common to understand.
+
+I’d suggest to avoid shadowing if possible to reduce the confusion and chances of errors.
+
+It’s better to use a more appropriate name instead of shadowing the one in the upper scope.
+
+Another good tip is to always use var, let, and const when using a variable.
+
+If you don’t put any of these keywords, the compiler will look up for the variable’s definition in the upper scope up to the global scope.
+
+If it doesn’t find it in the global scope, it will redefine it in the highest scope.
+
+This might cause many bugs and undesired behaviors.
+
+There’re linters and IDE plugins that can help you prevent that.
+
+		
+Petar Ivanov 14d
+Instead of being too "smart" in your code, think about your colleagues and future teammates. Maybe it's better to write 2-3 lines more, but guarantee that your future teammates will understand it. Remember: Complexity is a liability; Simplicity is an asset. --- P.S. Restack this ♻️ Someone out there might need it!
+29		4	
+Hoisting
+Hoisting is about moving all variable and function declarations to the top of their respective scopes before code execution.
+
+In other words, when the compiler sees var a or function foo it will pull up their declarations at the top of the scope.
+
+Then we can access a and foo before they are defined.
+
+The only difference between var a and function foo is that the initial value for a will be undefined until the a’s line of assignment is reached.
+
+console.log(a); // undefined
+var a = 2;
+The compiler sees that as:
+
+var a;
+console.log(a); // undefined;
+a = 2;
+Remember that this is a default behavior in JavaScript.
+
+The same applies for functions.
+
+logNewsletter(); // 'The T-Shaped Dev'
+
+function logNewsletter() {
+  const newsletter = 'The T-Shaped Dev';
+  console.log(newsletter);
+}
+If we use however const or let, we will get a Reference Error.
+
+console.log(a); // ReferenceError: a is not defined
+const a = 2;
+Hoisting Software Design
+I like to read a file or module from top to bottom.
+
+So I’m not a big fan of hoisting because it makes the code harder to read, in my opinion.
+
+For sure, there’re some useful cases, but I’d prefer to avoid that.
+
+That’s why I like using arrow functions - because they’re not hoisted.
+
+The same applied for let and const.
+
+Closures
+Closure is about a function which “remembers” its surrounding state.
+
+In other words, think of a closure like an exported nested function.
+
+function createCounter() {
+  let counter = 0;
+
+  return {
+    increase: function () {
+      counter += 1;
+    },
+    decrease: function () {
+      counter -= 1;
+    },
+    getCounter: function () {
+      return counter;
+    }
+  }
+}
+
+const counter = createCounter();
+counter.increase();
+counter.increase();
+counter.increase();
+console.log(counter.getCounter()); // 3
+counter.decrease();
+console.log(counter.getCounter()); // 2
+The exposed increase, decrease, and getCounter functions will still have access to the counter variable even though they are executed in an entirely different scope.
+
+increase, decrease, and getCounter functions will maintain a scope reference to where they were originally declared, and wherever we execute them, the closure will be exercised.
+
+Closures Software Design
+Closures are useful because they help us write more cleaner code by using encapsulation.
+
+We can hide data and logic by exposing only the needed functionality.
+
+What JavaScript topics have you been asked in your interviews? Share them in the comments 👀
+
+Leave a comment
+
+📋 Recap
+Scope is about the visibility of variables and functions in different part of your code.
+
+Hoisting is about moving all variable and function declarations to the top of their respective scopes before code execution.
+
+Closure is about a function which “remembers” its surrounding state.
+
+That's all for today. I hope this was helpful. ✌️
+

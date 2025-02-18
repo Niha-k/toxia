@@ -1,0 +1,117 @@
+1)why use xml?
+You can use XML to transfer data between two systems that store the same data in different formats. For example, your website stores dates in MM/DD/YYYY format, but your accounting system stores dates in DD/MM/YYYY format. You can transfer the data from the website to the accounting system by using XML.
+
+2)Where is XML most used?
+Although the design of XML focuses on documents, the language is widely used for the representation of arbitrary data structures, such as those used in web services.
+
+What are the advantages of using XML?
+XML uses human, not computer, language. XML is readable and understandable, even by novices, and no more difficult to code than HTML. XML is completely compatible with Java™ and 100% portable. Any application that can process XML can use your information, regardless of platform.
+
+Why do we still use XML?
+XML is still used in large scale, from the settings of an application to UI interface values. XML is used to generate or store various types of data from the user
+
+	words			meaning
+arbitrary			based on random choice or personal whim
+novices				inexperienced
+large scale			involving large numbers or a large area; extensive.
+arbitrary data structures       any data in any format .
+
+
+What is an example of arbitrary data?
+Arbitrary data is any data in any format. In the context of the Windows Media Player SDK, this means data in a format that is not supported by Windows Media Player. In the context of the Player, arbitrary data is simply binary data that the Player is not designed to play back natively
+
+
+
+What is arbitrary structure?
+It means "Some organisation of the data structure (including names of properties) that was just made up by some person" rather than being an established standard. The data structure is arbitrary.
+
+
+Contrast with Established Standards
+In contrast, an established standard might be something like the JSON Schema or XML Schema Definition (XSD), which provides a formal way to define the structure of JSON or XML data, including the types of properties, required fields, and relationships between data elements. For example, a JSON Schema for a person might specify that name must be a string, age must be an integer, and hobbies must be an array of strings, providing a clear and consistent way to validate and interpret the data.
+****************** {
+  "name": "John Doe",
+  "age": 30,
+  "hobbies": ["reading", "hiking", "coding"],
+  "favoriteColor": "blue",
+  "contactInfo": {
+    "email": "john.doe@example.com",
+    "phone": "123-456-7890"
+  }
+}
+
+
+MCQs
+Why is XML used?
+
+A) To create web pages
+B) To transfer data between systems that store the same data in different formats
+C) To enhance the performance of applications
+D) To store images and videos
+Where is XML most commonly used?
+
+A) For creating graphics
+B) For the representation of arbitrary data structures, especially in web services
+C) For writing scripts
+D) For database management
+What is one of the advantages of using XML?
+
+A) It is only readable by computers
+B) It is not compatible with Java
+C) It is human-readable and understandable, even by novices
+D) It is difficult to code compared to HTML
+Why do we still use XML?
+
+A) It is outdated and not used anymore
+B) It is used for small-scale applications only
+C) It is used in large scale for various types of data from users
+D) It is only used for web development
+What does "arbitrary data" refer to?
+
+A) Data that is structured in a specific format
+B) Data in any format, including unsupported formats
+C) Data that is only numerical
+D) Data that is only textual
+What is meant by "arbitrary structure"?
+
+A) A data structure that follows established standards
+B) An organization of data that was made up by an individual without a formal standard
+C) A structure that is universally accepted
+D) A structure that is only used in programming languages
+Which of the following is an example of an established standard?
+
+A) XML
+B) JSON
+C) JSON Schema or XML Schema Definition (XSD)
+D) HTML
+In the provided JSON example, what type is the age property?
+
+A) String
+B) Array
+C) Integer
+D) Object
+
+Why Study XML?
+XML plays an important role in many different IT systems.
+
+XML is often used for distributing data over the Internet.
+
+It is important (for all types of software developers!) to have a good understanding of XML.
+
+What You Will Learn
+This tutorial will give you a solid understanding of:
+
+What is XML?
+How does XML work?
+How can I use XML?
+What can I use XML for?
+
+
+Important XML Standards
+XML AJAX
+XML DOM
+XML XPath
+XML XSLT
+XML XQuery
+XML DTD
+XML Schema
+XML Services
